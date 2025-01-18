@@ -1,0 +1,274 @@
+/* src/App.css */
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More modern font */
+  margin: 0;
+  background-color: #f8f9fa; /* Lighter background */
+  color: #343a40; /* Darker text color for better contrast */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #212529; /* Dark background for dark mode */
+  color: #f8f9fa; /* Light text color for dark mode */
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+  padding: 40px 20px; /* Increased padding */
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  padding: 20px; /* Increased padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+  transition: background-color 0.3s ease;
+}
+
+header.dark-mode {
+  background-color: #343a40; /* Dark background for dark mode header */
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.15); /* Lighter shadow for dark mode */
+}
+
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center align navigation */
+  gap: 30px; /* Increased spacing between items */
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #343a40; /* Darker text color */
+  font-weight: 600; /* Slightly bolder font */
+  padding: 10px 20px;
+  border-radius: 25px; /* More rounded corners */
+  transition: all 0.3s ease; /* Smoother transition */
+  border: 2px solid transparent; /* Add a transparent border */
+}
+
+header nav ul li a:hover {
+  background-color: #e9ecef; /* Lighter background on hover */
+  border-color: #ced4da; /* Add border on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+header nav ul li a.active { /* Style for active link */
+  background-color: #007bff; /* Example active color */
+  color: #fff;
+  border-color: #007bff;
+}
+
+header.dark-mode nav ul li a {
+  color: #f8f9fa; /* Light text color for dark mode links */
+}
+
+header.dark-mode nav ul li a:hover {
+  background-color: #495057; /* Darker background on hover in dark mode */
+  border-color: #6c757d; /* Lighter border on hover in dark mode */
+}
+
+header.dark-mode nav ul li a.active {
+  background-color: #3498db; /* Example active color for dark mode */
+  color: #fff;
+  border-color: #3498db;
+}
+
+/* Login Buttons (in Login Component) */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px; /* Increased margin */
+  gap: 25px; /* Increased gap */
+}
+
+.login-button {
+  color: #fff;
+  border: none;
+  padding: 12px 25px; /* Increased padding */
+  border-radius: 8px; /* More rounded corners */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smoother transition */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Add shadow */
+}
+
+.login-button.google {
+    background-color: #DB4437; /* Updated Google color */
+}
+
+.login-button.google:hover {
+    background-color: #C53727; /* Updated Google hover color */
+}
+
+.login-button.apple {
+  background-color: #000; /* Apple black */
+}
+
+.login-button.apple:hover {
+  background-color: #333; /* Slightly lighter black on hover */
+}
+
+/* Footer */
+footer {
+  background-color: #343a40; /* Darker background */
+  color: #fff;
+  text-align: center;
+  padding: 20px; /* Increased padding */
+  margin-top: 50px; /* Increased margin */
+  border-top: 1px solid #dee2e6; /* Add a subtle top border */
+}
+
+/* Product List */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min column width */
+  gap: 30px; /* Increased gap */
+}
+
+/* Product Card */
+.product-card {
+  border: none; /* Remove border */
+  padding: 30px; /* Increased padding */
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px; /* Added margin below image */
+}
+
+.product-card h3 {
+  margin-bottom: 10px; /* Added margin below heading */
+  font-size: 1.4rem; /* Increased font size */
+  color: #343a40; /* Darker text color */
+}
+
+.product-card p {
+  font-size: 1.1rem; /* Increased font size */
+  color: #6c757d; /* Slightly lighter text color */
+}
+
+/* Product Details */
+/* Add styles for the ProductDetails component here */
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid */
+  }
+
+  header nav ul {
+    gap: 20px; /* Reduce gap on smaller screens */
+  }
+
+  header nav ul li a {
+    padding: 8px 12px; /* Reduce padding */
+  }
+
+  .login-container {
+    margin-top: 30px; /* Reduce margin */
+  }
+
+  .login-button {
+    padding: 10px 15px; /* Reduce padding */
+    font-size: 0.9rem; /* Reduce font size */
+  }
+}
+
+@media (max-width: 576px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Further adjust grid */
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #212529; /* Dark background */
+  color: #f8f9fa; /* Light text */
+}
+
+body.dark-mode header {
+  background-color: #343a40;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .product-card {
+  background-color: #495057; /* Slightly lighter color for cards */
+  color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .product-card:hover {
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode header nav ul li a {
+  color: #f8f9fa;
+}
+
+body.dark-mode header nav ul li a:hover {
+  background-color: #5f6368; /* Slightly lighter color for hover */
+}
+
+body.dark-mode .login-button {
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .login-button.google {
+  background-color: #DB4437; /* Google color */
+}
+
+body.dark-mode .login-button.google:hover {
+  background-color: #C53727; /* Google hover color */
+}
+
+body.dark-mode .login-button.apple {
+  background-color: #f8f9fa; /* Apple color in dark mode */
+}
+
+body.dark-mode .login-button.apple:hover {
+  background-color: #ced4da; /* Apple hover color in dark mode */
+}
+
+body.dark-mode footer {
+  border-top-color: #6c757d;
+}
+
+body.dark-mode .product-card h3 {
+  color: #f8f9fa; /* Light text color for headings */
+}
+
+body.dark-mode .product-card p {
+  color: #ced4da; /* Slightly darker text color for paragraph */
+}
