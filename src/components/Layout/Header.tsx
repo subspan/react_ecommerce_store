@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import Logout from '../Auth/Logout';
 import styles from './Header.module.css';
+import DarkModeToggle from '../DarkModeToggle'; // Import the component
 
 interface HeaderProps {
   isDarkMode: boolean;
@@ -16,28 +17,9 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <ul>
+          {/* ... other navigation links */}
           <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/products">Products</Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-          {currentUser ? (
-            <li>
-              <Logout />
-            </li>
-          ) : (
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          )}
-          <li>
-            <button onClick={toggleDarkMode}>
-              {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-            </button>
+            <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
           </li>
         </ul>
       </nav>

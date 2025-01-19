@@ -24,3 +24,9 @@
 .nav ul li a:hover {
   background-color: #eee;
 }
+
+/* Example in App.css */
+body.dark-mode header .dark-mode-toggle {
+  background-color: #f8f9fa; /* Light background in dark mode */
+  color: #212529; /* Dark text in dark mode */
+}
